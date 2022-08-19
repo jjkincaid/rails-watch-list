@@ -1,0 +1,19 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<div class="text-center text-white">
+    <h1>Save any kind of movies</h1>
+    <h3 class="typed-js" data-controller="typed-js"></h3>
+  </div>
+</div>
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="mb-0">My Lists</h3>
+
+ <%= link_to "Create a movie list", new_list_path %>
+
+
+  <% @lists.each do |list| %>
+    <%= link_to list_path(list) do %>
+    <%= list.name %>
+  <% end %>
+<% end %>
